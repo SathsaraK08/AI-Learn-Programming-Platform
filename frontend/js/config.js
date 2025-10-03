@@ -1,7 +1,7 @@
 // Configuration for frontend application
 
 const CONFIG = {
-    API_BASE_URL: 'http://localhost:8000',
+    API_BASE_URL: '',  // Empty for same-origin (served by backend)
     API_ENDPOINTS: {
         courses: '/api/lessons/courses',
         courseModules: (courseId) => `/api/lessons/courses/${courseId}/modules`,

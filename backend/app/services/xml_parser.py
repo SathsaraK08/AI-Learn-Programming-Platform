@@ -62,7 +62,15 @@ class XMLTopicParser:
     """
 
     def __init__(self, topics_directory: str = "data/topics"):
-        self.topics_dir = Path(topics_directory)
+        # If relative path, make it relative to project root
+        topics_path = Path(topics_directory)
+        if not topics_path.is_absolute():
+            # Get project root (3 levels up from this file: services -> app -> backend -> root)
+            project_root = Path(__file__).resolve().parent.parent.parent.parent
+            self.topics_dir = project_root / topics_directory
+        else:
+            self.topics_dir = topics_path
+
         self.courses: Dict[str, Course] = {}
         logger.info(f"Initialized XMLTopicParser with directory: {self.topics_dir}")
 

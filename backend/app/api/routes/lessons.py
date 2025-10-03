@@ -115,7 +115,7 @@ async def get_course_modules(course_id: str):
         raise HTTPException(status_code=500, detail="Failed to fetch modules")
 
 
-@router.get("/lessons/{lesson_id}", response_model=LessonContentResponse)
+@router.get("/{lesson_id}", response_model=LessonContentResponse)
 async def get_lesson(lesson_id: str, regenerate: bool = False):
     """
     Get full lesson content with AI-generated materials
@@ -168,7 +168,7 @@ async def get_lesson(lesson_id: str, regenerate: bool = False):
         raise HTTPException(status_code=500, detail="Failed to generate lesson content")
 
 
-@router.get("/lessons/{lesson_id}/quiz")
+@router.get("/{lesson_id}/quiz")
 async def get_lesson_quiz(lesson_id: str, num_questions: int = 5):
     """
     Get quiz for a lesson
@@ -207,7 +207,7 @@ async def get_lesson_quiz(lesson_id: str, num_questions: int = 5):
         raise HTTPException(status_code=500, detail="Failed to generate quiz")
 
 
-@router.get("/lessons/{lesson_id}/game")
+@router.get("/{lesson_id}/game")
 async def get_lesson_game(lesson_id: str):
     """
     Get mini-game for practicing lesson concepts
@@ -244,7 +244,7 @@ async def get_lesson_game(lesson_id: str):
         raise HTTPException(status_code=500, detail="Failed to generate mini-game")
 
 
-@router.post("/lessons/reload")
+@router.post("/reload")
 async def reload_topics():
     """
     Reload all topics from XML files

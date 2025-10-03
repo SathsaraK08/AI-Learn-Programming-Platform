@@ -302,14 +302,21 @@ async function executeCode() {
     const language = document.getElementById('languageSelect').value;
     const outputElement = document.getElementById('codeOutput');
 
-    outputElement.textContent = 'Running code...';
+    outputElement.textContent = '⏳ Running code...';
 
     try {
-        // TODO: Implement actual code execution via backend
-        // For now, just show a placeholder
-        outputElement.textContent = `Code execution coming soon!\n\nYour ${language} code:\n${code}`;
+        const result = await api.executeCode(code, language);
+
+        if (result.error) {
+            outputElement.textContent = `❌ Error:\n${result.error}\n\n${result.output || ''}`;
+            outputElement.style.color = '#ef4444';
+        } else {
+            outputElement.textContent = `✅ Success (${result.execution_time.toFixed(2)}s):\n\n${result.output}`;
+            outputElement.style.color = '#10b981';
+        }
     } catch (error) {
-        outputElement.textContent = `Error: ${error.message}`;
+        outputElement.textContent = `❌ Error:\n${error.message}`;
+        outputElement.style.color = '#ef4444';
     }
 }
 

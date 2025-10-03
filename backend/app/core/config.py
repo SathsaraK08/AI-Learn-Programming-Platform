@@ -4,7 +4,6 @@ Loads environment variables and application settings
 """
 
 from pydantic_settings import BaseSettings
-from typing import List
 from functools import lru_cache
 
 
@@ -23,7 +22,7 @@ class Settings(BaseSettings):
 
     # Google Gemini AI
     GEMINI_API_KEY: str
-    GEMINI_MODEL: str = "gemini-pro"
+    GEMINI_MODEL: str = "gemini-2.5-flash"
 
     # Database
     DATABASE_URL: str
@@ -32,9 +31,6 @@ class Settings(BaseSettings):
     # Redis
     REDIS_URL: str = "redis://localhost:6379/0"
     REDIS_CACHE_TTL: int = 3600
-
-    # CORS
-    ALLOWED_ORIGINS: List[str] = ["http://localhost:3000", "http://localhost:8000"]
 
     # Code Execution
     SANDBOX_TIMEOUT: int = 30
@@ -50,11 +46,10 @@ class Settings(BaseSettings):
         case_sensitive = True
 
 
-@lru_cache()
 def get_settings() -> Settings:
     """
-    Get cached settings instance
-    Using lru_cache to avoid reading .env file multiple times
+    Get settings instance
+    Note: Removed lru_cache for development to allow .env changes to reload
     """
     return Settings()
 

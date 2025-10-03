@@ -30,7 +30,7 @@ app = FastAPI(
 # CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Configure in production
+    allow_origins=["*"],  # Allow all origins for development
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -55,9 +55,9 @@ async def shutdown_event():
     # TODO: Close Redis connections
     logger.success("✅ Shutdown completed")
 
-@app.get("/")
-async def root():
-    """Root endpoint - API health check"""
+@app.get("/api")
+async def api_root():
+    """API root endpoint - API health check"""
     return {
         "message": "AI Learn Programming Platform API",
         "version": "1.0.0",
@@ -65,7 +65,7 @@ async def root():
         "docs": "/api/docs"
     }
 
-@app.get("/health")
+@app.get("/api/health")
 async def health_check():
     """Health check endpoint"""
     return {
@@ -78,12 +78,27 @@ async def health_check():
         }
     }
 
-# TODO: Include routers
-# from app.api.routes import lessons, practice, code_exec, users
-# app.include_router(lessons.router, prefix="/api/lessons", tags=["lessons"])
+# Include routers
+from app.api.routes import lessons, code_execution
+app.include_router(lessons.router, prefix="/api/lessons", tags=["lessons"])
+app.include_router(code_execution.router, prefix="/api/code", tags=["code-execution"])
+# TODO: Add more routers when ready
 # app.include_router(practice.router, prefix="/api/practice", tags=["practice"])
-# app.include_router(code_exec.router, prefix="/api/code", tags=["code-execution"])
 # app.include_router(users.router, prefix="/api/users", tags=["users"])
+
+# Mount static files (Frontend)
+import os
+from pathlib import Path
+
+# Get the parent directory (LearnProgrm) and then frontend directory
+base_dir = Path(__file__).resolve().parent.parent.parent
+frontend_dir = base_dir / "frontend"
+
+if frontend_dir.exists():
+    app.mount("/", StaticFiles(directory=str(frontend_dir), html=True), name="frontend")
+    logger.info(f"📁 Serving frontend from: {frontend_dir}")
+else:
+    logger.warning(f"⚠️  Frontend directory not found: {frontend_dir}")
 
 if __name__ == "__main__":
     import uvicorn

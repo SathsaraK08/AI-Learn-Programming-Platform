@@ -1,0 +1,23 @@
+# Minimal Requirements for Quick Start (Python 3.13 compatible)
+
+# FastAPI Core - Latest stable versions
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+
+# AI - Google Gemini
+google-generativeai
+
+# XML Processing
+xmltodict
+
+# Utilities
+python-dotenv
+loguru
+
+# Optional: Uncomment when needed
+# sqlalchemy
+# redis
+# docker
+# pytest

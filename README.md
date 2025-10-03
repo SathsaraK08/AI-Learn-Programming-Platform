@@ -2,6 +2,18 @@
 
 > **A revolutionary learning platform combining W3Schools' interactive coding + Replit's live environment + AI-powered personalized content generation**
 
+## ⚡ Quick Start - One Command!
+
+```bash
+./start.sh
+```
+
+Then open: **http://localhost:8000**
+
+That's it! Backend + Frontend in one command. See [START_HERE.md](START_HERE.md) for details.
+
+---
+
 ## 🎯 Vision
 Enable anyone (even children) to learn programming from zero to hero through:
 - AI-generated content with real-world analogies
