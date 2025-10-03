@@ -1,0 +1,51 @@
+# Backend Specific Git Ignore
+
+# Python virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.staging
+
+# Database
+*.db
+*.sqlite3
+*.sql
+migrations/versions/*.py
+!migrations/versions/__init__.py
+
+# Logs
+logs/
+*.log
+
+# Alembic
+alembic.ini
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Temporary files
+tmp/
+temp/
+*.tmp

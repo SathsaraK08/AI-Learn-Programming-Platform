@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<course id="python-basics" language="python">
+    <name>Python Programming - Zero to Hero</name>
+    <description>Complete Python course from basics to advanced concepts</description>
+
+    <modules>
+        <!-- Module 1: Python Fundamentals -->
+        <module id="fundamentals">
+            <name>Python Fundamentals</name>
+            <lessons>
+                <lesson id="variables" difficulty="beginner">
+                    <title>Variables and Data Types</title>
+                    <keywords>variables, integers, strings, floats, boolean, type conversion</keywords>
+                </lesson>
+
+                <lesson id="operators" difficulty="beginner">
+                    <title>Python Operators</title>
+                    <keywords>arithmetic, comparison, logical, assignment operators</keywords>
+                </lesson>
+
+                <lesson id="control-flow" difficulty="beginner">
+                    <title>Control Flow - If, Elif, Else</title>
+                    <keywords>if statement, elif, else, conditional logic, nested conditions</keywords>
+                </lesson>
+
+                <lesson id="loops" difficulty="beginner">
+                    <title>Loops - For and While</title>
+                    <keywords>for loop, while loop, break, continue, range, iteration</keywords>
+                </lesson>
+            </lessons>
+        </module>
+
+        <!-- Module 2: Data Structures -->
+        <module id="data-structures">
+            <name>Python Data Structures</name>
+            <lessons>
+                <lesson id="lists" difficulty="beginner">
+                    <title>Lists and List Methods</title>
+                    <keywords>lists, append, remove, pop, slice, list comprehension</keywords>
+                </lesson>
+
+                <lesson id="tuples" difficulty="beginner">
+                    <title>Tuples</title>
+                    <keywords>tuples, immutable, packing, unpacking</keywords>
+                </lesson>
+
+                <lesson id="dictionaries" difficulty="intermediate">
+                    <title>Dictionaries</title>
+                    <keywords>dictionary, key-value pairs, methods, iteration</keywords>
+                </lesson>
+
+                <lesson id="sets" difficulty="intermediate">
+                    <title>Sets</title>
+                    <keywords>sets, unique values, union, intersection, difference</keywords>
+                </lesson>
+            </lessons>
+        </module>
+
+        <!-- Module 3: Functions -->
+        <module id="functions">
+            <name>Functions and Modules</name>
+            <lessons>
+                <lesson id="basic-functions" difficulty="beginner">
+                    <title>Creating Functions</title>
+                    <keywords>function, def, parameters, arguments, return, docstring</keywords>
+                </lesson>
+
+                <lesson id="advanced-functions" difficulty="intermediate">
+                    <title>Advanced Functions</title>
+                    <keywords>lambda, map, filter, reduce, decorators, closures</keywords>
+                </lesson>
+
+                <lesson id="modules" difficulty="intermediate">
+                    <title>Modules and Packages</title>
+                    <keywords>import, modules, packages, __init__, pip</keywords>
+                </lesson>
+            </lessons>
+        </module>
+
+        <!-- Module 4: Object-Oriented Programming -->
+        <module id="oop">
+            <name>Object-Oriented Programming</name>
+            <lessons>
+                <lesson id="classes-objects" difficulty="intermediate">
+                    <title>Classes and Objects</title>
+                    <keywords>class, object, instance, __init__, self, attributes, methods</keywords>
+                </lesson>
+
+                <lesson id="inheritance" difficulty="intermediate">
+                    <title>Inheritance</title>
+                    <keywords>inheritance, parent class, child class, super, override</keywords>
+                </lesson>
+
+                <lesson id="polymorphism" difficulty="advanced">
+                    <title>Polymorphism</title>
+                    <keywords>polymorphism, method overriding, duck typing</keywords>
+                </lesson>
+
+                <lesson id="encapsulation" difficulty="advanced">
+                    <title>Encapsulation</title>
+                    <keywords>encapsulation, private, protected, public, getter, setter</keywords>
+                </lesson>
+            </lessons>
+        </module>
+
+        <!-- Module 5: File Handling -->
+        <module id="file-handling">
+            <name>File Handling</name>
+            <lessons>
+                <lesson id="reading-files" difficulty="intermediate">
+                    <title>Reading Files</title>
+                    <keywords>open, read, readline, readlines, with statement, file modes</keywords>
+                </lesson>
+
+                <lesson id="writing-files" difficulty="intermediate">
+                    <title>Writing Files</title>
+                    <keywords>write, writelines, append mode, context manager</keywords>
+                </lesson>
+
+                <lesson id="file-formats" difficulty="advanced">
+                    <title>Working with CSV and JSON</title>
+                    <keywords>csv, json, parsing, serialization, deserialization</keywords>
+                </lesson>
+            </lessons>
+        </module>
+
+        <!-- Module 6: Error Handling -->
+        <module id="error-handling">
+            <name>Exception Handling</name>
+            <lessons>
+                <lesson id="try-except" difficulty="intermediate">
+                    <title>Try-Except Blocks</title>
+                    <keywords>try, except, finally, exception handling, error types</keywords>
+                </lesson>
+
+                <lesson id="custom-exceptions" difficulty="advanced">
+                    <title>Custom Exceptions</title>
+                    <keywords>custom exceptions, raise, exception classes</keywords>
+                </lesson>
+            </lessons>
+        </module>
+    </modules>
+</course>
